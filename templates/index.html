@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Clasification: Imagenet </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Upload an image: </h1>
+                <hr>
+                <h4>Neural Network Imagenet: 1000 clases </h4>
+                <form action="{{ url_for('upload_image')}}" method="post" enctype="multipart/form-data">
+                    <div class="form-class">
+                        <label for="custom-file"> Select Image</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="image" id="image">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Prediction </button>
+                </form>
+            </div>
+        </div>
+        {{ prediction }}
+    </div>
+</body>
+</html>
